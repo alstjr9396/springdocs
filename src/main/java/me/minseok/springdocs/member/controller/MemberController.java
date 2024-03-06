@@ -8,6 +8,7 @@ import me.minseok.springdocs.member.dto.MemberRequest;
 import me.minseok.springdocs.member.dto.MemberResponse;
 import me.minseok.springdocs.member.service.MemberService;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -29,7 +30,7 @@ public class MemberController {
         return ResponseEntity.created(location).build();
     }
 
-    @PostMapping("/{memberId}")
+    @DeleteMapping("/{memberId}")
     ResponseEntity<Void> deleteMember(@PathVariable Long memberId) {
         memberService.deleteMember(memberId);
         return ResponseEntity.noContent().build();

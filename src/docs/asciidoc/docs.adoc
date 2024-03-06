@@ -1,0 +1,78 @@
+= springdocs
+:toc: left
+:source-highlighter: highlightjs
+:sectlinks:
+
+[[overview-http-status-codes]]
+=== HTTP status codes
+
+|===
+| 상태 코드 | 설명
+
+| `200 OK`
+| 성공
+
+| `201 Created`
+| 리소스 생성
+
+| `204 NO_CONTENT`
+| 성공 후 반환 값 없음
+
+| `400 Bad Request`
+| 잘못된 요청
+
+| `401 Unauthorized`
+| 비인증 상태
+
+| `403 Forbidden`
+| 권한 거부
+
+| `404 Not Found`
+| 존재하지 않는 요청 리소스
+
+| `500 Internal Server Error`
+| 서버 에러
+|===
+
+== 멤버 API
+
+=== 1. 멤버 생성 (POST /members)
+
+==== 요청
+include::{snippets}/member-controller-test/add-member/http-request.adoc[]
+include::{snippets}/member-controller-test/add-member/request-fields.adoc[]
+
+==== 응답
+include::{snippets}/member-controller-test/add-member/http-response.adoc[]
+include::{snippets}/member-controller-test/add-member/response-headers.adoc[]
+
+
+=== 2. 특정 멤버 조회 (GET /members/:memberId)
+
+==== 요청
+include::{snippets}/member-controller-test/get-member/http-request.adoc[]
+
+==== 응답
+include::{snippets}/member-controller-test/get-member/http-response.adoc[]
+include::{snippets}/member-controller-test/get-member/response-fields.adoc[]
+
+
+=== 3. 모든 멤버 조회 (GET /members)
+
+==== 요청
+include::{snippets}/member-controller-test/get-all-members/http-request.adoc[]
+
+==== 응답
+include::{snippets}/member-controller-test/get-all-members/http-response.adoc[]
+include::{snippets}/member-controller-test/get-all-members/response-fields.adoc[]
+
+
+=== 4. 멤버 삭제 (DELETE /members/:memberId)
+
+==== 요청
+include::{snippets}/member-controller-test/delete-member/http-request.adoc[]
+
+==== 응답
+include::{snippets}/member-controller-test/delete-member/http-response.adoc[]
+include::{snippets}/member-controller-test/delete-member/response-body.adoc[]
+
